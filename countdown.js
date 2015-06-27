@@ -1,4 +1,3 @@
-<script type="text/javascript">
 var end = new Date('06/30/2015 11:59 PM');
 
 var _second = 1000;
@@ -29,4 +28,3 @@ function showRemaining() {
 }
 
 timer = setInterval(showRemaining, 1000);
-</script>
