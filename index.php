@@ -39,6 +39,7 @@ and open the template in the editor.
 
 <h3>Countdown</h3>
 
+<script type="text/javascript" src="countdown.js"></script>
 <div id="countdown"></div>
 
     </body>
