@@ -12,33 +12,44 @@ and open the template in the editor.
     <body>
         
         <!-- This is just a very rough sketch of some of the key features of our appointment scheduler -->
-<h1>Schedule Appointment</h1>
+<script type="text/javascript">
 
-<h3>Family</h3>
+function saveUserInfo(){
 
-<form method="post">
-    <select name="selectFamily">
-        <!-- These options will be pulled from information input by user on "families page" -->
-        <!-- Possibly to be made as a text input... as it doesn't need much other than the actual name -->
-        <option value="1">Example Family 1</option>
-        <option value="2">Example Family 2</option>
-        <option value="3">Example Family 3</option>
-    </select>
-    <hr>
-        
-        <!-- Both date and time functions incompatible with Firefox browsers - Sorry! Use virtually any other brower. -->
-<h3>Date</h3>
+    function saveFamily(){
+        var theFamily = document.getElementById('myFamily');
+        localStorage.setItem('myFamily',myFamily.value);
+    }
+    function saveDate(){
+       var theDate = document.getElementById('myDate');
+       localStorage.setItem('myDate',myDate.value);
+    }
+    function saveTime(){
+        var theTime = document.getElementById('myTime');
+        localStorage.setItem('myTime',myTime.value);
+    }
+    saveFamily();
+    saveDate();
+    saveTime();
 
-    <input type="date" name="date"/>
-    <hr>
-    
-<h3>Time</h3>
+}
+// This function merely displays the information that is currently stored by the browser.
+// Exploring the options in how to save separate appointments / make corrections to appointments / remove appointment stored, etc.
+function displayUserInfo(){
+    document.getElementById("showAppointment").innerHTML = ("The name of the family is: " + localStorage.getItem('myFamily') + "<br>The date of the appointment is: "
+            + localStorage.getItem('myDate') + "<br>The time of the appointment is: " + localStorage.getItem('myTime') );
+}
+</script>
 
-    <input type="time" name="time">
-    <br><br>
-</form>
-<button onclick="store()" type="button">Save Appointment</button>
-        <hr>
+<h3>Family</h3><input type='text' id='myFamily'><br>
+
+<h3>Date</h3><input type="date" id="myDate"><br>
+
+<h3>Time</h3><input type="time" id='myTime'><br><br>
+
+<input type='button' onclick ='saveUserInfo()' value='Save Appointment'/>
+<input type='button' onclick ='displayUserInfo()' value='Display Appointment'/>
+<p id ="showAppointment"></p>
 
 <h3>Countdown</h3>
 
