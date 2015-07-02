@@ -12,6 +12,7 @@ function showRemaining() {
     if (distance < 0) {
 
         clearInterval(timer);
+        
         document.getElementById('countdown').innerHTML = 'EXPIRED!';
 
         return;
