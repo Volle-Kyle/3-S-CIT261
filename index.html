@@ -98,9 +98,11 @@
                     }]
                 }];
             function landerFamilies() {
+                var famIndex = "";
                 var output = "";
                 for (var i = 0; i < exampleWholeObject.length; i++) {
-                    output += "<div class='button-fam'>" + exampleWholeObject["family" + String(i)].familyName + " &rightarrow; </div>";
+                    famIndex = "family" + String(i);
+                    output += "<div class='button-fam'>" + exampleWholeObject[famIndex].familyName + " &rightarrow; </div>";
                 }
                 document.getElementById("lander-families").innerHTML = output;
             }
@@ -162,7 +164,6 @@
             <div id="countdown"></div>
         </div>
         <footer>
-            
             <hr/>
             &copy; Copyright Teacher's Aide <div id="year"></div>, All Right's Reserved.
         </footer>
