@@ -100,7 +100,7 @@
             function landerFamilies() {
                 var output = "";
                 for (var i = 0; i < exampleWholeObject.length; i++) {
-                    output += "<div class='button-fam'>" + exampleWholeObject["family" + i].familyName + " &rightarrow; </div>";
+                    output += "<div class='button-fam'>" + exampleWholeObject["family" + String(i)].familyName + " &rightarrow; </div>";
                 }
                 document.getElementById("lander-families").innerHTML = output;
             }
