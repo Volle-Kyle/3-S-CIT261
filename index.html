@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html>
 
 	<head>
@@ -109,36 +110,45 @@
                 document.getElementById("lander-families").innerHTML = output;
             }
             </script>
-        <!-- This is just a very rough sketch of some of the key features of our appointment scheduler -->
-        <script type="text/javascript">
-            function saveUserInfo(){
 
-                function saveFamily(){
-                    var theFamily = document.getElementById('myFamily');
-                    localStorage.setItem('myFamily',myFamily.value);
-                }
-                function saveDate(){
-                   var theDate = document.getElementById('myDate');
-                   localStorage.setItem('myDate',myDate.value);
-                }
-                function saveTime(){
-                    var theTime = document.getElementById('myTime');
-                    localStorage.setItem('myTime',myTime.value);
-                }
-                saveFamily();
-                saveDate();
-                saveTime();
-            }
-            // This function merely displays the information that is currently stored by the browser.
-            // Exploring the options in how to save separate appointments / make corrections to appointments / remove appointment stored, etc.
-            function displayUserInfo(){
-                document.getElementById("showAppointment").innerHTML = ("The name of the family is: " + localStorage.getItem('myFamily') + "<br>The date of the appointment is: "
-                        + localStorage.getItem('myDate') + "<br>The time of the appointment is: " + localStorage.getItem('myTime') );
-            }
-        </script>
-        
+        <script>
+			var appointment = [
+			"Test Family (1)",
+			"Test Family (2)"];
+			
+			function setAppointment() {
+				var storeFamily = document.getElementById("myFamily").value;
+				var storeDate = document.getElementById("myDate").value;
+				var storeTime = document.getElementById("myTime").value;
+				
+				appointment.push(storeFamily, storeDate, storeTime);
+				
+				localStorage["appointment"] = JSON.stringify(appointment);
+				
+				// Exploring if...then loop to display this ONLY when required fields are filled.
+				// No point in displaying this if it doesn't actually save due to lack of information...
+				// document.getElementById("test").innerHTML = "Appointment saved!";
+				
+				document.getElementById("myFamily").required = true;
+				document.getElementById("myDate").required = true;
+				document.getElementById("myTime").required = true;
+			}
+			
+			function showAppointments() {
+				var storedAppointments = JSON.parse(localStorage["appointment"]);
+				document.getElementById("test").innerHTML = storedAppointments;
+			}
+			
+			// Temporary function used to display contents of appointment array.
+			//function showArrayPlease() {
+			//	for (i=0;i<appointment.length;i++)
+			//	{
+			//		document.write(appointment[i] + "<br >");
+			//	}
+			//}
+		</script>
+			
     </head>
-    
     
     <body onload="getFullYear(); getDaysLeftInMonth(); landerFamilies();">
     
@@ -146,9 +156,9 @@
         <div id="lander">
             <h1>Teacher's Aide</h1>
             <h3>Families</h3>
-            <div id="lander-families"><!-- JS function will construct families list --></div>
+            	<div id="lander-families"><!-- JS function will construct families list --></div>
             <h3>Appointments</h3>
-            <div id="lander-appointments" class="button-appt"><!-- JS function will construct appointment list --></div>
+            	<div id="lander-appointments" class="button-appt"><!-- JS function will construct appointment list --></div>
             <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
         </div>
         <hr/>
@@ -164,21 +174,30 @@
         <hr/>
         
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>        
-        <div id="appointment">
-            <h3>Family</h3><input type="text" id="myFamily"><br>
-            <h3>Date</h3><input type="date" id="myDate"><br>
-            <h3>Time</h3><input type="time" id="myTime"><br><br>
-            
-            <input type="button" onclick ="saveUserInfo()" value="Save Appointment"/>
-            <input type="button" onclick ="displayUserInfo()" value="Display Appointment"/>
-            
-            <p id ="showAppointment"></p>
+        <div id="appointment"><br>
+            <form>
+            <!-- Will explore dropdown functions once I figure out how to do it with Kyle's code... -->
+                <h3>Family</h3><input type="text" id="myFamily" required placeholder="Select a family..."/><br>
+                <h3>Date</h3><input type="date" id="myDate" required /><br>
+                <h3>Time</h3><input type="time" id="myTime" required /><br><br>
+                <input type="submit" onclick="setAppointment()" value="Set Appointment">
+            </form>
         </div>
+        
+        <br>
+        <button type="button" onclick="showAppointments()">Show Appointments</button>
+        <div id="test"></div>
+        <button type="button" onclick="window.localStorage.clear()">Clear localStorage</button>
+        
+       <!-- Used to utilize temporary "showArrayPlease" function 
+        <button type="button" onclick="showArrayPlease()">Print array contents</button>
+        <div id="showArray"></div> -->
         
 <!-- Footer ----------------------------------------------------------------------------------------------------------------->
         <footer>
             <hr/>
             &copy; Copyright Teacher's Aide <div id="year"></div>, All Right's Reserved.
         </footer>
+        
     </body>
 </html>

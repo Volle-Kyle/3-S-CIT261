@@ -188,7 +188,8 @@ header {
     background-color: #000000;
 }
 h1 {
-    color: #ffffff;
+	/* Temporary change! For visibility's sake */
+    /* color: #ffffff; */
 }
 nav {
     background-color: #ff9900;
