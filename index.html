@@ -140,12 +140,12 @@
 			}
 			
 			// Temporary function used to display contents of appointment array.
-			//function showArrayPlease() {
-			//	for (i=0;i<appointment.length;i++)
-			//	{
-			//		document.write(appointment[i] + "<br >");
-			//	}
-			//}
+			function showArrayPlease() {
+				for (i=0;i<appointment.length;i++)
+				{
+					document.write(appointment[i] + "<br >");
+				}
+			}
 		</script>
 			
     </head>
@@ -184,14 +184,14 @@
             </form>
         </div>
         
-        <br>
-        <button type="button" onclick="showAppointments()">Show Appointments</button>
-        <div id="test"></div>
-        <button type="button" onclick="window.localStorage.clear()">Clear localStorage</button>
-        
-       <!-- Used to utilize temporary "showArrayPlease" function 
-        <button type="button" onclick="showArrayPlease()">Print array contents</button>
-        <div id="showArray"></div> -->
+            <br>
+            <button type="button" onclick="showAppointments()">Show Appointments</button>
+            <div id="test"></div>
+            <button type="button" onclick="window.localStorage.clear()">Clear localStorage</button>
+            
+           <!-- Used to utilize temporary "showArrayPlease" function  -->
+            <button type="button" onclick="showArrayPlease()">Print array contents</button>
+            <div id="showArray"></div>
         
 <!-- Footer ----------------------------------------------------------------------------------------------------------------->
         <footer>
