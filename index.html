@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
-    <head>
+
+	<head>
         <meta charset="UTF-8">
         <title>Teacher's Aide</title>
         <link type="image/gif" rel="icon" href="favicon.ico" />
         <link type="text/css" rel="stylesheet" href="style.css" />
+        
         <script>
             function getFullYear() {
                 var d = new Date();
@@ -134,10 +136,13 @@
                         + localStorage.getItem('myDate') + "<br>The time of the appointment is: " + localStorage.getItem('myTime') );
             }
         </script>
-        <!-- Removing this for new script
-        <script type="text/javascript" src="countdown.js"></script>-->
+        
     </head>
+    
+    
     <body onload="getFullYear(); getDaysLeftInMonth(); landerFamilies();">
+    
+<!-- Lander ----------------------------------------------------------------------------------------------------------------->
         <div id="lander">
             <h1>Teacher's Aide</h1>
             <h3>Families</h3>
@@ -147,22 +152,30 @@
             <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
         </div>
         <hr/>
+        
+<!-- Family ----------------------------------------------------------------------------------------------------------------->
         <div id="family-info">
         </div>
         <hr/>
+        
+<!-- Individual ------------------------------------------------------------------------------------------------------------->
         <div id="individual-info">
         </div>
         <hr/>
+        
+<!-- Appointment ------------------------------------------------------------------------------------------------------------>        
         <div id="appointment">
-            <h3>Family</h3><input type='text' id='myFamily'><br>
+            <h3>Family</h3><input type="text" id="myFamily"><br>
             <h3>Date</h3><input type="date" id="myDate"><br>
-            <h3>Time</h3><input type="time" id='myTime'><br><br>
-            <input type='button' onclick ='saveUserInfo()' value='Save Appointment'/>
-            <input type='button' onclick ='displayUserInfo()' value='Display Appointment'/>
+            <h3>Time</h3><input type="time" id="myTime"><br><br>
+            
+            <input type="button" onclick ="saveUserInfo()" value="Save Appointment"/>
+            <input type="button" onclick ="displayUserInfo()" value="Display Appointment"/>
+            
             <p id ="showAppointment"></p>
-            <h3>Countdown</h3>
-            <div id="countdown"></div>
         </div>
+        
+<!-- Footer ----------------------------------------------------------------------------------------------------------------->
         <footer>
             <hr/>
             &copy; Copyright Teacher's Aide <div id="year"></div>, All Right's Reserved.
