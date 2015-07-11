@@ -7,8 +7,6 @@
         <link type="image/gif" rel="icon" href="favicon.ico" />
         <link type="text/css" rel="stylesheet" href="style.css" />
         <script src="scripts.js"></script>
-        <!-- Removing this for new script
-        <script type="text/javascript" src="countdown.js"></script>-->
     </head>
     <body onload="populateLocalStorage(); getFullYear(); getDaysLeftInMonth(); landerFamilies();">
 <!-- Lander ----------------------------------------------------------------------------------------------------------------->
@@ -44,7 +42,7 @@
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>      
         <div id="appointment">
         <form>
-            <h3>Family</h3><select id="selectFamily"><option>Select a family...</option></select><br><br>
+            <h3>Family</h3><select id="selectFamily" size="5" required></select><br>
             <h3>Date</h3><input type="date" id="selectDate" required />
             <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
             <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>

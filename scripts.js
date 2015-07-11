@@ -88,6 +88,17 @@ function populateLocalStorage() {
         };
     var compatibleAppointments = JSON.stringify(exampleAppointments);
     localStorage.setItem('appointments', compatibleAppointments);
+	
+// Incomplete code that will (hopefully) pull family names from stored object (above) rather than defined array:
+	var select = document.getElementById("selectFamily");
+	var families = ["Jones", "Smith"];
+		for(var i = 0; i < families.length; i++) {
+			var opt = families[i];
+			var el = document.createElement("option");
+			el.textContent = opt;
+			el.value = opt;
+			select.appendChild(el);
+	}
 }
 
 function landerFamilies() {
@@ -113,23 +124,17 @@ function saveUserInfo(){
 
     function saveFamily(){
         var theFamily = document.getElementById('selectFamily');
-        localStorage.setItem('selectFamily',myFamily.value);
+        localStorage.setItem('selectFamily',selectFamily.value);
     }
     function saveDate(){
        var theDate = document.getElementById('selectDate');
-       localStorage.setItem('selectDate',myDate.value);
+       localStorage.setItem('selectDate',selectDate.value);
     }
     function saveTime(){
         var theTime = document.getElementById('myTime');
-        localStorage.setItem('selectTime',myTime.value);
+        localStorage.setItem('selectTime',selectTime.value);
     }
     saveFamily();
     saveDate();
     saveTime();
-}
-// This function merely displays the information that is currently stored by the browser.
-// Exploring the options in how to save separate appointments / make corrections to appointments / remove appointment stored, etc.
-function displayUserInfo(){
-    document.getElementById("showAppointment").innerHTML = ("The name of the family is: " + localStorage.getItem('myFamily') + "<br>The date of the appointment is: "
-            + localStorage.getItem('myDate') + "<br>The time of the appointment is: " + localStorage.getItem('myTime') );
 }
