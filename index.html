@@ -1,18 +1,17 @@
+
 <!DOCTYPE html>
-
 <html>
-
-	<head>
+    <head>
         <meta charset="UTF-8">
         <title>Teacher's Aide</title>
         <link type="image/gif" rel="icon" href="favicon.ico" />
         <link type="text/css" rel="stylesheet" href="style.css" />
-<<<<<<< HEAD
         <script src="scripts.js"></script>
         <!-- Removing this for new script
         <script type="text/javascript" src="countdown.js"></script>-->
     </head>
     <body onload="populateLocalStorage(); getFullYear(); getDaysLeftInMonth(); landerFamilies();">
+<!-- Lander ----------------------------------------------------------------------------------------------------------------->
         <div id="lander">
             <h1>Teacher's Aide</h1>
             <h3>Families</h3>
@@ -21,174 +20,17 @@
             <h3>Appointments</h3>
             <div id="lander-appointments" class="button-appt"><!-- JS function will construct appointment list --></div>
             <div class="button">New Appointment +</div>
-=======
-        
-        <script>
-            function getFullYear() {
-                var d = new Date();
-                var n = d.getFullYear();
-                document.getElementById("year").innerHTML = n;
-            }
-            function getDaysLeftInMonth() {
-                var d = new Date();
-                var month = d.getMonth();
-                var day = d.getDate();
-                var totalDays;
-                switch (month) {
-                    case 2:
-                        totalDays = 28;
-                        break;
-                    case 4:
-                    case 6:
-                    case 9:
-                    case 11:
-                        totalDays = 30;
-                        break;
-                    case 1:
-                    case 3:
-                    case 5:
-                    case 7:
-                    case 8:
-                    case 10:
-                    case 12:
-                        totalDays = 31;
-                        break;
-                }
-                var daysLeft = totalDays - day;
-                document.getElementById("countdown").innerHTML = "Days left this month: " + daysLeft;
-            }
-        </script>
-        <script>
-            var exampleWholeObject =
-                [{
-                    "family0":
-                    [{
-                        "familyName":"Jones",
-                        "fatherName":"John Jones",
-                        "motherName":"Julie Jones",
-                        "child0Name":"Jeremy Jones",
-                        "child1Name":"January Jones"
-                    }],
-                    "family1":
-                    [{
-                        "familyName":"Smith",
-                        "fatherName":"Sam Smith",
-                        "motherName":null,
-                        "child0Name":"Sarah Smith"
-                    }]
-                }];
-            var exampleJonesFam =
-                [{
-                    "John Jones":
-                    [{
-                        "birthday":"March 15th",
-                        "notes":"Works construction, busy most days but free most evenings."
-                    }],
-                    "Julie Jones":
-                    [{
-                        "birthday":"June 29th",
-                        "notes":"Stays at home, works with young women, so Wednesdays are busy."
-                    }],
-                    "Jeremy Jones":
-                    [{
-                        "birthday":"August 9th",
-                        "notes":"Graduating high school this year, favorite candy bar is Snickers."
-                    }],
-                    "January Jones":
-                    [{
-                        "birthday":"Unknown",
-                        "notes":"Likes to dance."
-                    }]
-                }];
-            var exampleAppointments =
-                [{
-                    "appointment0":
-                    [{
-                        "family":"Jones",
-                        "date":"8th July, 2015",
-                        "time":"7:00pm"
-                    }],
-                    "appointment1":
-                    [{
-                        "family":"Smith",
-                        "date":"7/14/15",
-                        "time":"6pm"
-                    }]
-                }];
-            function landerFamilies() {
-                var famIndex = "";
-                var output = "";
-                for (var i = 0; i < exampleWholeObject.length; i++) {
-                    famIndex = "family" + String(i);
-                    output += "<div class='button-fam'>" + exampleWholeObject[famIndex].familyName + " &rightarrow; </div>";
-                }
-                document.getElementById("lander-families").innerHTML = output;
-            }
-            </script>
-
-        <script>
-			var appointment = [
-			"Test Family (1)",
-			"Test Family (2)"];
-			
-			function setAppointment() {
-				var storeFamily = document.getElementById("myFamily").value;
-				var storeDate = document.getElementById("myDate").value;
-				var storeTime = document.getElementById("myTime").value;
-				
-				appointment.push(storeFamily, storeDate, storeTime);
-				
-				localStorage["appointment"] = JSON.stringify(appointment);
-				
-				// Exploring if...then loop to display this ONLY when required fields are filled.
-				// No point in displaying this if it doesn't actually save due to lack of information...
-				// document.getElementById("test").innerHTML = "Appointment saved!";
-				
-				document.getElementById("myFamily").required = true;
-				document.getElementById("myDate").required = true;
-				document.getElementById("myTime").required = true;
-			}
-			
-			function showAppointments() {
-				var storedAppointments = JSON.parse(localStorage["appointment"]);
-				document.getElementById("test").innerHTML = storedAppointments;
-			}
-			
-			// Temporary function used to display contents of appointment array.
-			function showArrayPlease() {
-				for (i=0;i<appointment.length;i++)
-				{
-					document.write(appointment[i] + "<br >");
-				}
-			}
-		</script>
-			
-    </head>
-    
-    <body onload="getFullYear(); getDaysLeftInMonth(); landerFamilies();">
-    
-<!-- Lander ----------------------------------------------------------------------------------------------------------------->
-        <div id="lander">
-            <h1>Teacher's Aide</h1>
-            <h3>Families</h3>
-            	<div id="lander-families"><!-- JS function will construct families list --></div>
-            <h3>Appointments</h3>
-            	<div id="lander-appointments" class="button-appt"><!-- JS function will construct appointment list --></div>
->>>>>>> origin/gh-pages
             <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
         </div>
         <hr/>
-        
 <!-- Family ----------------------------------------------------------------------------------------------------------------->
         <div id="family-info">
         </div>
         <hr/>
-        
 <!-- Individual ------------------------------------------------------------------------------------------------------------->
         <div id="individual-info">
         </div>
         <hr/>
-<<<<<<< HEAD
         <div id="add-family">
             <h3>Add a Family</h3>
             <form>
@@ -199,44 +41,24 @@
             </form>
         </div>
         <hr/>
+<!-- Appointment ------------------------------------------------------------------------------------------------------------>      
         <div id="appointment">
-            <h3>Family</h3><input type='text' id='myFamily'><br>
-            <h3>Date</h3><input type="date" id="myDate"><br>
-            <h3>Time</h3><input type="time" id='myTime'><br><br>
-            <input type='button' onclick ='saveUserInfo()' value='Save Appointment'/>
-            <input type='button' onclick ='displayUserInfo()' value='Display Appointment'/>
+        <form>
+            <h3>Family</h3><select id="selectFamily"><option>Select a family...</option></select><br><br>
+            <h3>Date</h3><input type="date" id="selectDate" required />
+            <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
+            <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>
+       </form>
+       
             <p id ="showAppointment"></p>
             <h3>Countdown</h3>
-            <div id="countdown"></div>
-=======
-        
-<!-- Appointment ------------------------------------------------------------------------------------------------------------>        
-        <div id="appointment"><br>
-            <form>
-            <!-- Will explore dropdown functions once I figure out how to do it with Kyle's code... -->
-                <h3>Family</h3><input type="text" id="myFamily" required placeholder="Select a family..."/><br>
-                <h3>Date</h3><input type="date" id="myDate" required /><br>
-                <h3>Time</h3><input type="time" id="myTime" required /><br><br>
-                <input type="submit" onclick="setAppointment()" value="Set Appointment">
-            </form>
->>>>>>> origin/gh-pages
+            <div id="displayCountdown"></div>
         </div>
-        
-            <br>
-            <button type="button" onclick="showAppointments()">Show Appointments</button>
-            <div id="test"></div>
-            <button type="button" onclick="window.localStorage.clear()">Clear localStorage</button>
-            
-           <!-- Used to utilize temporary "showArrayPlease" function  -->
-            <button type="button" onclick="showArrayPlease()">Print array contents</button>
-            <div id="showArray"></div>
-        
 <!-- Footer ----------------------------------------------------------------------------------------------------------------->
         <footer>
             <hr/>
             &copy; Copyright Teacher's Aide <span id="year"></span>, All Right's Reserved.
             <input type="button" onclick="populateLocalStorage" value="Click here to initialize/reset storage"/>
         </footer>
-        
     </body>
 </html>

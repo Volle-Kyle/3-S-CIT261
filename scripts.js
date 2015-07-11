@@ -30,7 +30,7 @@ function getDaysLeftInMonth() {
             break;
     }
     var daysLeft = totalDays - day;
-    document.getElementById("countdown").innerHTML = "Days left this month: " + daysLeft;
+    document.getElementById("displayCountdown").innerHTML = "Days left this month: " + daysLeft;
 }
 
 function populateLocalStorage() {
@@ -112,16 +112,16 @@ function displayAddFamily(){
 function saveUserInfo(){
 
     function saveFamily(){
-        var theFamily = document.getElementById('myFamily');
-        localStorage.setItem('myFamily',myFamily.value);
+        var theFamily = document.getElementById('selectFamily');
+        localStorage.setItem('selectFamily',myFamily.value);
     }
     function saveDate(){
-       var theDate = document.getElementById('myDate');
-       localStorage.setItem('myDate',myDate.value);
+       var theDate = document.getElementById('selectDate');
+       localStorage.setItem('selectDate',myDate.value);
     }
     function saveTime(){
         var theTime = document.getElementById('myTime');
-        localStorage.setItem('myTime',myTime.value);
+        localStorage.setItem('selectTime',myTime.value);
     }
     saveFamily();
     saveDate();
