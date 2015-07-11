@@ -188,7 +188,12 @@ header {
     background-color: #000000;
 }
 h1 {
+<<<<<<< HEAD
     color: #000000;
+=======
+	/* Temporary change! For visibility's sake */
+    /* color: #ffffff; */
+>>>>>>> origin/gh-pages
 }
 nav {
     background-color: #ff9900;
