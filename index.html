@@ -8,55 +8,62 @@
         <link type="text/css" rel="stylesheet" href="style.css" />
         <script src="scripts.js"></script>
     </head>
-    <body onload="populateLocalStorage(); getFullYear(); getDaysLeftInMonth(); landerFamilies();">
-<!-- Lander ----------------------------------------------------------------------------------------------------------------->
-        <div id="lander">
+    <body onload="populateLocalStorage(); getFullYear(); getDaysLeftInMonth(); displayLander();">
+        <div id="main">
             <h1>Teacher's Aide</h1>
-            <h3>Families</h3>
-            <div id="lander-families"><!-- JS function will construct families list --></div>
-            <div class="button" onclick="displayAddFamily()">Add Family +</div>
-            <h3>Appointments</h3>
-            <div id="lander-appointments" class="button-appt"><!-- JS function will construct appointment list --></div>
-            <div class="button">New Appointment +</div>
-            <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
-        </div>
-        <hr/>
+<!-- Lander ----------------------------------------------------------------------------------------------------------------->
+            <div id="lander" class="display">
+                <div id="lander-families"><!-- JS function will construct families list --></div>
+                <div class="button" onclick="displayAddFamily()">Add Family +</div>
+                <div id="lander-appointments"><!-- JS function will construct appointment list --></div>
+                <div class="button" onclick="displayAppointments()">New Appointment +</div>
+                <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
+            </div>
 <!-- Family ----------------------------------------------------------------------------------------------------------------->
-        <div id="family-info">
-        </div>
-        <hr/>
+            <div id="family-info" class="hide">
+                <div id="family-display"></div>
+                <div class="button">New Family Member +</div>
+            </div>
+            <div id="add-family" class="hide">
+                <h3>Add a Family</h3>
+                <form>
+                    Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
+                    <p>Note: You will add individual family members after the family entry has been created.</p>
+                    <input type="button" onclick="addFamily()" value="Add Family"/><br/>
+                    <input type="button" onclick="displayLander()" value="Back"/>
+                </form>
+            </div>
 <!-- Individual ------------------------------------------------------------------------------------------------------------->
-        <div id="individual-info">
-        </div>
-        <hr/>
-        <div id="add-family">
-            <h3>Add a Family</h3>
-            <form>
-                <label for="familyName">Family Name (Last Name):</label>
-                <input type="text" name="familyName" id="familyName"/><br/>
-                <p>Note: You will add individual family members after the family entry has been created.</p>
-                <input type="button" onclick="addFamily()" value="Add Family"/>
-            </form>
-        </div>
-        <hr/>
+            <div id="member-info" class="hide"></div>
+            <div id="add-member" class="hide">
+                <h3>Add a Family Member</h3>
+                <form>
+                    Full Name:<br/><input type="text" name="memberName" id="memberName"/><br/>
+                    Position in Family:<br/><input type="text" name="position" id="position"/><br/>
+                    Birthday:<br/><input type="text" name="birthday" id="birthday"/><br/>
+                    Notes:<br/><textarea name="notes" id="notes"></textarea><br/>
+                    <input type="button" onclick="addMember()" value="Add Family Member"/><br/>
+                    <input type="button" onclick="displayFamily()" value="Back"/>
+                </form>
+            </div>
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>      
-        <div id="appointment">
-        <form>
-            <h3>Family</h3><select id="selectFamily" size="5" required></select><br>
-            <h3>Date</h3><input type="date" id="selectDate" required />
-            <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
-            <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>
-       </form>
-       
-            <p id ="showAppointment"></p>
-            <h3>Countdown</h3>
-            <div id="displayCountdown"></div>
+            <div id="appointment" class="hide">
+            <form>
+                <h3>Family</h3><select id="selectFamily" size="5" required></select><br>
+                <h3>Date</h3><input type="date" id="selectDate" required />
+                <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
+                <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>
+           </form>
+
+                <p id ="showAppointment"></p>
+                <h3>Countdown</h3>
+                <div id="displayCountdown"></div>
+            </div>
         </div>
 <!-- Footer ----------------------------------------------------------------------------------------------------------------->
         <footer>
             <hr/>
             &copy; Copyright Teacher's Aide <span id="year"></span>, All Right's Reserved.
-            <input type="button" onclick="populateLocalStorage" value="Click here to initialize/reset storage"/>
         </footer>
     </body>
 </html>
