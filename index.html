@@ -22,7 +22,7 @@
 <!-- Family ----------------------------------------------------------------------------------------------------------------->
             <div id="family-info" class="hide">
                 <div id="family-display"></div>
-                <div class="button">New Family Member +</div>
+                <div class="button" onclick="displayAddMember()">New Family Member +</div>
             </div>
             <div id="add-family" class="hide">
                 <h3>Add a Family</h3>
@@ -30,11 +30,11 @@
                     Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
                     <p>Note: You will add individual family members after the family entry has been created.</p>
                     <input type="button" onclick="addFamily()" value="Add Family"/><br/>
-                    <input type="button" onclick="displayLander()" value="Back"/>
+                    <input type="button" onclick="displayAddFamily()" value="Back"/>
                 </form>
             </div>
 <!-- Individual ------------------------------------------------------------------------------------------------------------->
-            <div id="member-info" class="hide"></div>
+            <div id="member-info" class=""></div>
             <div id="add-member" class="hide">
                 <h3>Add a Family Member</h3>
                 <form>
@@ -53,6 +53,7 @@
                 <h3>Date</h3><input type="date" id="selectDate" required />
                 <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
                 <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>
+                <input type="button" onclick="displayAppointments()" value="Back"/>
            </form>
 
                 <p id ="showAppointment"></p>

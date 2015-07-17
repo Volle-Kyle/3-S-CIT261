@@ -137,25 +137,14 @@ function addFamily() {
     displayLander();
 }
 
-function displayFamily() {
-    familyInfo();
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('family-info').class = "display";
-}
-
 function familyInfo() {
     var jones = JSON.parse(localStorage.getItem('jones'));
     var output = "<h3>Jones Family</h3>";
     for (var i = 0; i < jones.members.length; i++) {
-        output += "<div class='button'><a onclick='displayMember()'>" + jones.members[i].name + " &rightarrow; </a></div>";
+        output += "<div class='button'><a onclick='memberInfo()'>" + jones.members[i].name + " &rightarrow; </a></div>";
     }
-    output += "<br/><input type='button' onclick='displayLander()' value='Back'/>";
+    output += "<br/><input type='button' onclick='displayFamily()' value='Back'/>";
     document.getElementById("family-display").innerHTML = output;
-}
-
-function displayAddMember() {
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('family-info').class = "display";
 }
 
 function addMember() {
@@ -168,12 +157,6 @@ function addMember() {
     var compatibleJones = JSON.stringify(jones);
     localStorage.setItem('jones', jones);
     displayFamily();
-}
-
-function displayMember() {
-    memberInfo();
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('member-info').class = "display";
 }
 
 function memberInfo() {
@@ -214,12 +197,45 @@ function displayAddFamily() {
     else {
         div.style.display = 'block';
     }
+    // 
 }
 
 function displayAppointments() {
     var div = document.getElementById('appointment');
     if (div.style.display !== 'none') {
         div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+}
+
+function displayFamily() {
+    familyInfo();
+    var div = document.getElementById('family-info');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+}
+
+function displayAddMember() {
+    var div = document.getElementById('add-member');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+}
+
+function displayMember() {
+    var div = document.getElementById('member-info');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+
     }
     else {
         div.style.display = 'block';
