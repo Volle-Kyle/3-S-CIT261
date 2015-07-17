@@ -446,9 +446,9 @@ tr td:first-child {
     text-align: right;
 }
 
-//.hide {
-//    display: none;
-//}
+.hide {
+    display: none;
+}
 
 .display {
     display: block;

@@ -88,17 +88,17 @@ function populateLocalStorage() {
         ]};
     var compatibleAppointments = JSON.stringify(exampleAppointments);
     localStorage.setItem('appointments', compatibleAppointments);
-	
+    
 // Incomplete code that will (hopefully) pull family names from stored object (above) rather than defined array:
-	var select = document.getElementById("selectFamily");
-	var families = ["Jones", "Smith"];
-		for(var i = 0; i < families.length; i++) {
-			var opt = families[i];
-			var el = document.createElement("option");
-			el.textContent = opt;
-			el.value = opt;
-			select.appendChild(el);
-	}
+    var select = document.getElementById("selectFamily");
+    var families = ["Jones", "Smith"];
+        for(var i = 0; i < families.length; i++) {
+            var opt = families[i];
+            var el = document.createElement("option");
+            el.textContent = opt;
+            el.value = opt;
+            select.appendChild(el);
+    }
 }
 
 function displayLander() {
@@ -118,11 +118,6 @@ function landerFamilies() {
     document.getElementById("lander-families").innerHTML = output;
 }
 
-function displayAppointments() {
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('appointment').class = "display";
-}
-
 function landerAppointments() {
     var appointments = JSON.parse(localStorage.getItem('appointments'));
     var output = "<h3>Appointments</h3>";
@@ -131,11 +126,6 @@ function landerAppointments() {
                 + appointments.appointments[i].date + " | " + appointments.appointments[i].time + "</div>";
     }
     document.getElementById("lander-appointments").innerHTML = output;
-}
-
-function displayAddFamily(){
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('add-family').class = "display";
 }
 
 function addFamily() {
@@ -214,3 +204,24 @@ function saveUserInfo(){
     saveDate();
     saveTime();
 }
+
+// Toggle visibily of hidden divs:
+function displayAddFamily() {
+    var div = document.getElementById('add-family');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+}
+
+function displayAppointments() {
+    var div = document.getElementById('appointment');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
