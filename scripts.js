@@ -139,7 +139,7 @@ function addFamily() {
 
 function familyInfo() {
     var jones = JSON.parse(localStorage.getItem('jones'));
-    var output = "<h3>Jones Family</h3>";
+    var output = "<h2>Jones Family</h2>";
     for (var i = 0; i < jones.members.length; i++) {
         output += "<div class='button'><a onclick='memberInfo()'>" + jones.members[i].name + " &rightarrow; </a></div>";
     }
@@ -197,7 +197,6 @@ function displayAddFamily() {
     else {
         div.style.display = 'block';
     }
-    // 
 }
 
 function displayAppointments() {

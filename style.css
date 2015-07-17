@@ -18,6 +18,7 @@ html {
 
 body {
   margin: 0;
+  background-color: #212121;
 }
 
 /* HTML5 display definitions
@@ -136,6 +137,17 @@ h1 {
   text-align: center;
   font-size: 2em;
   margin: 0.67em 0;
+  color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /**
@@ -454,3 +466,12 @@ tr td:first-child {
 .display {
     display: block;
 }
+
+div.button:hover {
+  background-color: greenyellow;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -moz-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  -ms-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+};
