@@ -111,7 +111,7 @@ function displayLander() {
 
 function landerFamilies() {
     var families = JSON.parse(localStorage.getItem('families'));
-    var output = "<h3>Families</h3>";
+    var output = "<h2>Families</h2>";
     for (var i = 0; i < families.families.length; i++) {
         output += "<div class='button'><a onclick='displayFamily()'>" + families.families[i].familyName + " &rightarrow; </a></div>";
     }
@@ -120,7 +120,7 @@ function landerFamilies() {
 
 function landerAppointments() {
     var appointments = JSON.parse(localStorage.getItem('appointments'));
-    var output = "<h3>Appointments</h3>";
+    var output = "<h2>Appointments</h2>";
     for (var i = 0; i < appointments.appointments.length; i++) {
         output += "<div class='button-appt'>" + appointments.appointments[i].family + "<br/>"
                 + appointments.appointments[i].date + " | " + appointments.appointments[i].time + "</div>";
