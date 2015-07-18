@@ -152,6 +152,13 @@ h2 {
     -webkit-text-fill-color: transparent;
 }
 
+h3 {
+  color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 /**
  * Address styling not present in IE 8/9.
  */
@@ -486,4 +493,11 @@ div.button:hover {
 
 input, select, textarea { 
 color: black; 
+}
+
+.fancy-font {
+  color: #f35626;
+    background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 };
