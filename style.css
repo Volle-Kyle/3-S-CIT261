@@ -486,18 +486,19 @@ tr td:first-child {
 
 div.button:hover {
   background-color: greenyellow;
-  -webkit-transition: background-color 0.3s ease-in-out;
-  -moz-transition: background-color 0.3s ease-in-out;
-  -o-transition: background-color 0.3s ease-in-out;
-  -ms-transition: background-color 0.3s ease-in-out;
-  transition: background-color 0.3s ease-in-out;
+  -webkit-transition: background-color 0.5s ease-in-out;
+  -moz-transition: background-color 0.5s ease-in-out;
+  -o-transition: background-color 0.5s ease-in-out;
+  -ms-transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-in-out;
   transition-property: background;
-  transition-duration: .5s;
+  transition-duration: .7s;
   transition-timing-function: linear;
 }
 
 input, select, textarea { 
 color: black; 
+width: 200px;
 }
 
 .fancy-font {
