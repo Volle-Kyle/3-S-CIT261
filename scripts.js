@@ -162,7 +162,7 @@ function addMember() {
 function memberInfo() {
     var jones = JSON.parse(localStorage.getItem('jones'));
     var output = "<table class='center'><tr><td><p class='fancy-font'>Name:</p></td><td>" + jones.members[0].name + "</td></tr>"
-               + "<tr><td><p class='fancy-font'>Position In Family:</p></td><td>" + jones.members[0].position + "</td></tr>"
+               + "<tr><td><p class='fancy-font'>Role:</p></td><td>" + jones.members[0].position + "</td></tr>"
                + "<tr><td><p class='fancy-font'>Birthday:</p></td><td>" + jones.members[0].birthday + "</td></tr>"
                + "<tr><td><p class='fancy-font'>Notes:</p></td><td>" + jones.members[0].notes + "</td></tr></table>"
                + "<tr><center><input type='button' style='width: 200px' onclick='displayFamily()' class='button' value='Back'/><center>";
