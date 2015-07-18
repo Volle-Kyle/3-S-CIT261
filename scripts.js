@@ -143,7 +143,7 @@ function familyInfo() {
     for (var i = 0; i < jones.members.length; i++) {
         output += "<div class='button'><a onclick='memberInfo()'>" + jones.members[i].name + " &rightarrow; </a></div>";
     }
-    output += "<br/><input type='button' onclick='displayFamily()' class='button' value='Back'/>";
+    output += "<br/><center><input type='button' onclick='displayFamily()' class='button' value='Back'/></center>";
     document.getElementById("family-display").innerHTML = output;
 }
 
@@ -165,7 +165,7 @@ function memberInfo() {
                + "<tr><td>Position In Family:</td><td>" + jones.members[0].position + "</td></tr>"
                + "<tr><td>Birthday:</td><td>" + jones.members[0].birthday + "</td></tr>"
                + "<tr><td>Notes:</td><td>" + jones.members[0].notes + "</td></tr>"
-               + "<tr><td><input type='button' onclick='displayFamily()' class='button' value='Back'/></td></table>";
+               + "<tr><td><center><input type='button' onclick='displayFamily()' class='button' value='Back'/><center><</td></table>";
     document.getElementById("family-display").innerHTML = output;
 }
 

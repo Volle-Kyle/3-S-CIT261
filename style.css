@@ -20,6 +20,7 @@ body {
   margin: 0;
   background-color: #212121;
   color: #DDDDDD;
+  text-align: center;
 }
 
 /* HTML5 display definitions
@@ -447,6 +448,7 @@ th {
     background-color: buttonface;
     border-radius: 15px;
     color: #000000;
+    text-align: center;
 }
 
 .button-appt {
@@ -485,3 +487,7 @@ div.button:hover {
 input, select, textarea { 
 color: black; 
 };
+
+.width-150px{
+    
+}
