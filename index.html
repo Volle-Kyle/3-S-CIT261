@@ -23,15 +23,15 @@
 <!-- Family ----------------------------------------------------------------------------------------------------------------->
             <div id="family-info" class="hide">
                 <div id="family-display"></div>
-                <div class="button" onclick="displayAddMember()">New Family Member +</div>
+                <div class="button" class="button" onclick="displayAddMember()">New Family Member +</div>
             </div>
             <div id="add-family" class="hide">
                 <h3>Add a Family</h3>
                 <form>
                     Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
                     <p>Note: You will add individual family members after the family entry has been created.</p>
-                    <input type="button" onclick="addFamily()" value="Add Family"/><br/>
-                    <input type="button" onclick="displayAddFamily()" value="Back"/>
+                    <input type="button" class="button" onclick="addFamily()" value="Add Family"/><br/>
+                    <input type="button" class="button" onclick="displayAddFamily()" value="Back"/>
                 </form>
             </div>
 <!-- Individual ------------------------------------------------------------------------------------------------------------->
@@ -43,8 +43,8 @@
                     Position in Family:<br/><input type="text" name="position" id="position"/><br/>
                     Birthday:<br/><input type="text" name="birthday" id="birthday"/><br/>
                     Notes:<br/><textarea name="notes" id="notes"></textarea><br/>
-                    <input type="button" onclick="addMember()" value="Add Family Member"/><br/>
-                    <input type="button" onclick="displayAddMember()" value="Back"/>
+                    <input type="button" class="button" onclick="addMember()" value="Add Family Member"/><br/>
+                    <input type="button" class="button" onclick="displayAddMember()" value="Back"/>
                 </form>
             </div>
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>      
@@ -53,8 +53,8 @@
                 <h3>Family</h3><select id="selectFamily" size="5" required></select><br>
                 <h3>Date</h3><input type="date" id="selectDate" required />
                 <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
-                <input type="submit" onclick ="saveUserInfo()" value="Save Appointment"/>
-                <input type="button" onclick="displayAppointments()" value="Back"/>
+                <input type="submit" class="button" onclick ="saveUserInfo()" value="Save Appointment"/>
+                <input type="button" class="button" onclick="displayAppointments()" value="Back"/>
            </form>
 
                 <p id ="showAppointment"></p>
