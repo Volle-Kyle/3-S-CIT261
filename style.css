@@ -443,6 +443,11 @@ table {
   border-spacing: 0;
 }
 
+table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
 td,
 th {
   padding: .5em;
