@@ -21,30 +21,27 @@
                 <div id="countdown"><!-- This is where the script will display the countdown timer --></div>
             </div>
 <!-- Family ----------------------------------------------------------------------------------------------------------------->
-            <div id="family-info" class="hide">
-                <div id="family-display"></div>
-                <div class="button" class="button" onclick="displayAddMember()">New Family Member +</div>
-            </div>
+            <div id="family-info" class="hide"></div>
             <div id="add-family" class="hide">
                 <h3>Add a Family</h3>
                 <form>
                     <p class='fancy-font'>Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
                     <p>Note: You will add individual family members after the family entry has been created.</p>
                     <center><input type="button" class="button" style="width: 200px" onclick="addFamily()" value="Add Family"/></center>
-                    <center><input type="button" class="button" style="width: 200px" onclick="displayAddFamily()" value="Back"/></center>
+                    <center><input type="button" class="button" style="width: 200px" onclick="addFamilyToLander()" value="Back"/></center>
                 </form>
             </div>
 <!-- Individual ------------------------------------------------------------------------------------------------------------->
-            <div id="member-info" class=""></div>
+            <div id="member-info" class="hide"></div>
             <div id="add-member" class="hide">
                 <h3>Add a Family Member</h3>
-                <form >
+                <form>
                     Full Name:<br/><input type="text" name="memberName" id="memberName"/><br/>
                     Position in Family:<br/><input type="text" name="position" id="position"/><br/>
                     Birthday:<br/><input type="text" name="birthday" id="birthday"/><br/>
                     Notes:<br/><textarea name="notes" id="notes"></textarea><br/>
-                    <center><input type="button" class="button" style="width: 200px" onclick="addMember()" value="Add Family Member"/><br/><center>
-                    <center><input type="button" class="button" style="width: 200px" onclick="displayAddMember()" value="Back"/></center>
+                    <center><input type="button" class="button" style="width: 200px" onclick="addMember()" value="Add Family Member"/><br/></center>
+                    <center><input type="button" class="button" style="width: 200px" onclick="addMemberToFamily()" value="Back"/></center>
                 </form>
             </div>
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>      
@@ -53,8 +50,8 @@
                 <h3>Family</h3><select id="selectFamily" required></select><br>
                 <h3>Date</h3><input type="date" id="selectDate" required />
                 <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
-                <center><input type="submit" class="button" style="width: 200px" nclick ="saveUserInfo()" value="Save Appointment"/></center>
-                <center><input type="button" class="button" style="width: 200px" onclick="displayAppointments()" value="Back"/></center>
+                <center><input type="submit" class="button" style="width: 200px" onclick ="saveUserInfo()" value="Save Appointment"/></center>
+                <center><input type="button" class="button" style="width: 200px" onclick="appointmentsToLander()" value="Back"/></center>
            </form>
 
                 <p id ="showAppointment"></p>

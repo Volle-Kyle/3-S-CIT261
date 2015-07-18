@@ -101,14 +101,6 @@ function populateLocalStorage() {
     }
 }
 
-function displayLander() {
-    landerFamilies();
-    landerAppointments();
-    
-    document.getElementsByClassName('display').class = "hide";
-    document.getElementById('lander').class = "display";
-}
-
 function landerFamilies() {
     var families = JSON.parse(localStorage.getItem('families'));
     var output = "<h2>Families</h2>";
@@ -134,17 +126,18 @@ function addFamily() {
     families.families[newEntry].familyName = document.getElementById("familyName").value;
     var compatibleFamilies = JSON.stringify(families);
     localStorage.setItem('families', families);
-    displayLander();
+    addFamilyToLander();
 }
 
 function familyInfo() {
     var jones = JSON.parse(localStorage.getItem('jones'));
     var output = "<h2>Jones Family</h2>";
     for (var i = 0; i < jones.members.length; i++) {
-        output += "<div class='button'><a onclick='memberInfo()'>" + jones.members[i].name + " &rightarrow; </a></div>";
+        output += "<div class='button'><a onclick='displayMember()'>" + jones.members[i].name + " &rightarrow; </a></div>";
     }
-    output += "<br/><center><input type='button' style='width: 200px' onclick='displayFamily()' class='button' value='Back'/></center>";
-    document.getElementById("family-display").innerHTML = output;
+    output += "<div class='button' onclick='displayAddMember()'>New Family Member +</div><br/>"
+            + "<center><input type='button' style='width: 200px' onclick='familyToLander()' class='button' value='Back'/></center>";
+    document.getElementById("family-info").innerHTML = output;
 }
 
 function addMember() {
@@ -156,7 +149,7 @@ function addMember() {
     jones.members[newEntry].notes = document.getElementById("notes").value;
     var compatibleJones = JSON.stringify(jones);
     localStorage.setItem('jones', jones);
-    displayFamily();
+    addMemberToFamily();
 }
 
 function memberInfo() {
@@ -165,8 +158,8 @@ function memberInfo() {
                + "<tr><td><p class='fancy-font'>Role:</p></td><td>" + jones.members[0].position + "</td></tr>"
                + "<tr><td><p class='fancy-font'>Birthday:</p></td><td>" + jones.members[0].birthday + "</td></tr>"
                + "<tr><td><p class='fancy-font'>Notes:</p></td><td>" + jones.members[0].notes + "</td></tr></table>"
-               + "<tr><center><input type='button' style='width: 200px' onclick='displayFamily()' class='button' value='Back'/><center>";
-    document.getElementById("family-display").innerHTML = output;
+               + "<tr><center><input type='button' style='width: 200px' onclick='memberToFamily()' class='button' value='Back'/><center>";
+    document.getElementById('member-info').innerHTML = output;
 }
 
 function saveUserInfo(){
@@ -186,57 +179,94 @@ function saveUserInfo(){
     saveFamily();
     saveDate();
     saveTime();
+    appointmentsToLander();
 }
 
 // Toggle visibily of hidden divs:
-function displayAddFamily() {
-    var div = document.getElementById('add-family');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
-}
 
-function displayAppointments() {
-    var div = document.getElementById('appointment');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
+function displayLander() {
+    landerFamilies();
+    landerAppointments();
+    document.getElementsByClassName('display').class = "hide";
+    document.getElementById('lander').class = "display";
 }
 
 function displayFamily() {
     familyInfo();
-    var div = document.getElementById('family-info');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
+    var family = document.getElementById('family-info');
+    var lander = document.getElementById('lander');
+    family.style.display = 'block';
+    lander.style.display = 'none';
 }
 
-function displayAddMember() {
-    var div = document.getElementById('add-member');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
-    }
-    else {
-        div.style.display = 'block';
-    }
+function familyToLander() {
+    landerFamilies();
+    landerAppointments();
+    var family = document.getElementById('family-info');
+    var lander = document.getElementById('lander');
+    family.style.display = 'none';
+    lander.style.display = 'block';
+}
+
+function displayAddFamily() {
+    var addFam = document.getElementById('add-family');
+    var lander = document.getElementById('lander');
+    addFam.style.display = 'block';
+    lander.style.display = 'none';
+}
+
+function addFamilyToLander() {
+    landerFamilies();
+    landerAppointments();
+    var addFam = document.getElementById('add-family');
+    var lander = document.getElementById('lander');
+    addFam.style.display = 'none';
+    lander.style.display = 'block';
+}
+
+function displayAppointments() {
+    var appointment = document.getElementById('appointment');
+    var lander = document.getElementById('lander');
+    appointment.style.display = 'block';
+    lander.style.display = 'none';
+}
+
+function appointmentsToLander() {
+    landerFamilies();
+    landerAppointments();
+    var appointment = document.getElementById('appointment');
+    var lander = document.getElementById('lander');
+    appointment.style.display = 'none';
+    lander.style.display = 'block';
 }
 
 function displayMember() {
-    var div = document.getElementById('member-info');
-    if (div.style.display !== 'none') {
-        div.style.display = 'none';
+    memberInfo();
+    var member = document.getElementById('member-info');
+    var family = document.getElementById('family-info');
+    member.style.display = 'block';
+    family.style.display = 'none';
+}
 
-    }
-    else {
-        div.style.display = 'block';
-    }
-};
+function memberToFamily() {
+    familyInfo;
+    var member = document.getElementById('member-info');
+    var family = document.getElementById('family-info');
+    member.style.display = 'none';
+    family.style.display = 'block';
+}
+
+function displayAddMember() {
+    var addMem = document.getElementById('add-member');
+    var family = document.getElementById('family-info');
+    addMem.style.display = 'block';
+    family.style.display = 'none';
+}
+
+function addMemberToFamily() {
+    familyInfo;
+    var addMem = document.getElementById('add-member');
+    var family = document.getElementById('family-info');
+    addMem.style.display = 'none';
+    family.style.display = 'block';
+}
