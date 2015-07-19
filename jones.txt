@@ -1,0 +1,27 @@
+{
+"members":[
+    {
+    "name":"John Jones",
+    "position":"Father",
+    "birthday":"March 15th",
+    "notes":"Works construction, busy most days but free most evenings."
+    },
+    {
+    "name":"Julie Jones",
+    "position":"Mother",
+    "birthday":"June 29th",
+    "notes":"Stays at home, works with young women, so Wednesdays are busy."
+    },
+    {
+    "name":"Jeremy Jones",
+    "position":"Son",
+    "birthday":"August 9th",
+    "notes":"Graduating high school this year, favorite candy bar is Snickers."
+    },
+    {
+    "name":"January Jones",
+    "position":"Daughter",
+    "birthday":"Unknown",
+    "notes":"Likes to dance."
+    }
+]}

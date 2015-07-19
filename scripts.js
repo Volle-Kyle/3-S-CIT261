@@ -34,61 +34,64 @@ function getDaysLeftInMonth() {
     document.getElementById("displayCountdown").innerHTML = "Days left this month: " + daysLeft;
 }
 
-function populateLocalStorage() {
-    var exampleFamilies = {
-        "families":[
-            {"familyName":"Jones"},
-            {"familyName":"Smith"}
-        ]};
+function ajaxCall() {
+    var entryRequest1 = new XMLHttpRequest();
+    var url = "families.txt";
+    entryRequest1.open("POST", url);
+
+    entryRequest1.onreadystatechange = function() {
+        if (entryRequest1.readyState === 4 && entryRequest1.status === 200) {
+            var exampleFamilies = JSON.parse(entryRequest1.responseText);
+            familiesLocalStorage(exampleFamilies);
+        }
+    };
+    entryRequest1.send();
+    
+    var entryRequest2 = new XMLHttpRequest();
+    var url = "jones.txt";
+    entryRequest2.open("POST", url);
+
+    entryRequest2.onreadystatechange = function() {
+        if (entryRequest2.readyState === 4 && entryRequest2.status === 200) {
+            var exampleJones = JSON.parse(entryRequest2.responseText);
+            jonesLocalStorage(exampleJones);
+        }
+    };
+    entryRequest2.send();
+    
+    var entryRequest3 = new XMLHttpRequest();
+    var url = "appointments.txt";
+    entryRequest3.open("POST", url);
+
+    entryRequest3.onreadystatechange = function() {
+        if (entryRequest3.readyState === 4 && entryRequest3.status === 200) {
+            var exampleAppointments = JSON.parse(entryRequest3.responseText);
+            appointmentsLocalStorage(exampleAppointments);
+        }
+    };
+    entryRequest3.send();   
+    
+    displayLander();
+}
+
+function familiesLocalStorage(exampleFamilies) {
     var compatibleFamilies = JSON.stringify(exampleFamilies);
     localStorage.setItem('families', compatibleFamilies);
-        
-    var exampleJones = {
-        "members":[
-            {
-            "name":"John Jones",
-            "position":"Father",
-            "birthday":"March 15th",
-            "notes":"Works construction, busy most days but free most evenings."
-            },
-            {
-            "name":"Julie Jones",
-            "position":"Mother",
-            "birthday":"June 29th",
-            "notes":"Stays at home, works with young women, so Wednesdays are busy."
-            },
-            {
-            "name":"Jeremy Jones",
-            "position":"Son",
-            "birthday":"August 9th",
-            "notes":"Graduating high school this year, favorite candy bar is Snickers."
-            },
-            {
-            "name":"January Jones",
-            "position":"Daughter",
-            "birthday":"Unknown",
-            "notes":"Likes to dance."
-            }
-        ]};
+}
+
+function jonesLocalStorage(exampleJones) {
     var compatibleJones = JSON.stringify(exampleJones);
     localStorage.setItem('jones', compatibleJones);
-    
-    var exampleAppointments = {
-        "appointments":[
-            {
-            "family":"Jones",
-            "date":"7/8/15",
-            "time":"7:00pm"
-            },
-            {
-            "family":"Smith",
-            "date":"7/14/15",
-            "time":"6:15pm"
-            }
-        ]};
+}
+
+function appointmentsLocalStorage(exampleAppointments) {
     var compatibleAppointments = JSON.stringify(exampleAppointments);
     localStorage.setItem('appointments', compatibleAppointments);
-    
+}
+
+/*
+function populateLocalStorage() {
+      
 // Incomplete code that will (hopefully) pull family names from stored object (above) rather than defined array:
     var select = document.getElementById("selectFamily");
     var families = ["Jones", "Smith"];
@@ -100,6 +103,7 @@ function populateLocalStorage() {
             select.appendChild(el);
     }
 }
+*/
 
 function landerFamilies() {
     var families = JSON.parse(localStorage.getItem('families'));
