@@ -135,7 +135,7 @@ function familyInfo() {
     for (var i = 0; i < jones.members.length; i++) {
         output += "<div class='button'><a onclick='displayMember()'>" + jones.members[i].name + " &rightarrow; </a></div>";
     }
-    output += "<div class='button' onclick='displayAddMember()'>New Family Member +</div><br/>"
+    output += "<div class='button-appt' onclick='displayAddMember()'>New Family Member +</div><br/>"
             + "<center><input type='button' style='width: 200px' onclick='familyToLander()' class='button' value='Back'/></center>";
     document.getElementById("family-info").innerHTML = output;
 }
@@ -179,7 +179,6 @@ function saveUserInfo(){
     saveFamily();
     saveDate();
     saveTime();
-    appointmentsToLander();
 }
 
 // Toggle visibily of hidden divs:
