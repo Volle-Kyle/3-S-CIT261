@@ -1,3 +1,10 @@
+function pageStart() {
+    ajaxCall();
+    getFullYear();
+    getDaysLeftInMonth();
+    displayLander();
+}
+
 function getFullYear() {
     var d = new Date();
     var n = d.getFullYear();
@@ -69,9 +76,7 @@ function ajaxCall() {
             appointmentsLocalStorage(exampleAppointments);
         }
     };
-    entryRequest3.send();   
-    
-    displayLander();
+    entryRequest3.send();
 }
 
 function familiesLocalStorage(exampleFamilies) {

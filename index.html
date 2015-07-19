@@ -10,9 +10,10 @@
         <script src="scripts.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body onload="ajaxCall(); getFullYear(); getDaysLeftInMonth();">
+    <body onload="pageStart()">
         <div id="main">
             <h1>Teacher's Aide</h1>
+            <hr/>
 <!-- Lander ----------------------------------------------------------------------------------------------------------------->
             <div id="lander" class="display">
                 <div id="lander-families"><!-- JS function will construct families list --></div>
@@ -26,7 +27,7 @@
             <div id="add-family" class="hide">
                 <h3>Add a Family</h3>
                 <form>
-                    <p class='fancy-font'>Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
+                    Family Name (Last Name):<br/><input type="text" name="familyName" id="familyName"/><br/>
                     <p>Note: You will add individual family members after the family entry has been created.</p>
                     <center><input type="button" class="button" style="width: 200px" onclick="addFamily()" value="Add Family"/></center>
                     <center><input type="button" class="button" style="width: 200px" onclick="addFamilyToLander()" value="Back"/></center>
@@ -48,7 +49,11 @@
 <!-- Appointment ------------------------------------------------------------------------------------------------------------>      
             <div id="appointment" class="hide">
             <form>
-                <h3>Family</h3><select id="selectFamily" required></select><br>
+                <h3>Family</h3>
+                <select id="selectFamily" required="" size="5">
+                <option value="Jones">Jones</option>
+                <option value="Smith">Smith</option>
+                </select><br>
                 <h3>Date</h3><input type="date" id="selectDate" required />
                 <h3>Time</h3><input type="time" id="selectTime" required /><br><br>
                 <center><input type="submit" class="button" style="width: 200px" onclick ="saveUserInfo()" value="Save Appointment"/></center>

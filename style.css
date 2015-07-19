@@ -279,17 +279,17 @@ samp {
  * 2. Correct font properties not being inherited.
  * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
  */
-
+/*
 button,
 input,
 optgroup,
 select,
 textarea {
-  color: inherit; /* 1 */
-  font: inherit; /* 2 */
-  margin: 0; /* 3 */
+  color: inherit;
+  font: inherit; 
+  margin: 0; 
 }
-
+*/
 /**
  * Address `overflow` set to `hidden` in IE 8/9/10/11.
  */
@@ -507,7 +507,7 @@ div.button:hover {
   transition-timing-function: linear;
 }
 
-input, select, textarea { 
+input, select, option, textarea { 
 background-color: white;
 color: black !important; 
 width: 200px;
