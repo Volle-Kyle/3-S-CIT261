@@ -149,6 +149,8 @@ h1 {
 }
 
 h2 {
+    font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
   color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
     -webkit-background-clip: text;
@@ -156,6 +158,8 @@ h2 {
 }
 
 h3 {
+    font-family: 'PT Sans', sans-serif;
+  font-weight: 700;
   color: #f35626;
     background-image: -webkit-linear-gradient(92deg,#f35626,#feab3a);
     -webkit-background-clip: text;
